@@ -19,36 +19,36 @@ class ReflectiveModelTest extends TestCase
 
     public function test_reflective_abstraction_has_annotation()
     {
-        $className = FakeClassWithAnnotation::class;
-        $functionName = "fakeMethodWithAnnotation";
+        $class_name = FakeClassWithAnnotation::class;
+        $function_name = "fakeMethodWithAnnotation";
 
-        $this->assertTrue((new ReflectiveClass($className))->hasAnnotation("role"));
-        $this->assertFalse((new ReflectiveClass($className))->hasAnnotation("arash"));
+        $this->assertTrue((new ReflectiveClass($class_name))->hasAnnotation("role"));
+        $this->assertFalse((new ReflectiveClass($class_name))->hasAnnotation("arash"));
 
-        $this->assertTrue((new ReflectiveMethod($className, $functionName))->hasAnnotation("annotation"));
-        $this->assertFalse((new ReflectiveMethod($className, $functionName))->hasAnnotation("Annotation"));
-        $this->assertFalse((new ReflectiveMethod($className, $functionName))->hasAnnotation("Ali"));
+        $this->assertTrue((new ReflectiveMethod($class_name, $function_name))->hasAnnotation("annotation"));
+        $this->assertFalse((new ReflectiveMethod($class_name, $function_name))->hasAnnotation("Annotation"));
+        $this->assertFalse((new ReflectiveMethod($class_name, $function_name))->hasAnnotation("Ali"));
     }
 
     public function test_annotation_check_property()
     {
-        $className = FakeClassWithAnnotation::class;
-        $functionName = "fakeMethodWithAnnotation";
+        $class_name = FakeClassWithAnnotation::class;
+        $function_name = "fakeMethodWithAnnotation";
 
-        $this->assertTrue((new ReflectiveClass($className))->getAnnotation("role")
+        $this->assertTrue((new ReflectiveClass($class_name))->getAnnotation("role")
             ->checkProperty("enabled", true));
-        $this->assertFalse((new ReflectiveClass($className))->getAnnotation("role")
+        $this->assertFalse((new ReflectiveClass($class_name))->getAnnotation("role")
             ->checkProperty("enabled", false));
-        $this->assertEquals(true, (new ReflectiveMethod($className, $functionName))->getAnnotation("annotation")
+        $this->assertEquals(true, (new ReflectiveMethod($class_name, $function_name))->getAnnotation("annotation")
             ->checkProperty("name", "Ali"));
     }
 
     public function test_annotation_has_property()
     {
-        $className = FakeClassWithAnnotation::class;
-        $functionName = "fakeMethodWithAnnotation";
+        $class_name = FakeClassWithAnnotation::class;
+        $function_name = "fakeMethodWithAnnotation";
 
-        $this->assertTrue((new ReflectiveClass($className))->getAnnotation("role")->hasProperty("enabled"));
-        $this->assertFalse((new ReflectiveClass($className))->getAnnotation("role")->hasProperty("ali"));
+        $this->assertTrue((new ReflectiveClass($class_name))->getAnnotation("role")->hasProperty("enabled"));
+        $this->assertFalse((new ReflectiveClass($class_name))->getAnnotation("role")->hasProperty("ali"));
     }
 }

@@ -19,36 +19,36 @@ class AnnotationParserTest extends TestCase
 {
     public function test_annotation_parser_get_titles()
     {
-        $methodComment = (new ReflectiveMethod(FakeClassWithAnnotation::class,
+        $method_comment = (new ReflectiveMethod(FakeClassWithAnnotation::class,
             "fakeMethodWithAnnotation"))->getComment();
-        $classComment = (new ReflectiveClass(FakeClassWithAnnotation::class))->getComment();
+        $class_comment = (new ReflectiveClass(FakeClassWithAnnotation::class))->getComment();
 
-        $methodAnnotationParser = new AnnotationParser($methodComment);
-        $classAnnotationParser = new AnnotationParser($classComment);
-        $methodTitles = $methodAnnotationParser->getTitles();
-        $classTitles = $classAnnotationParser->getTitles();
-        sort($methodTitles);
-        sort($classTitles);
+        $method_annotation_parser = new AnnotationParser($method_comment);
+        $class_annotation_parser = new AnnotationParser($class_comment);
+        $method_titles = $method_annotation_parser->getTitles();
+        $class_titles = $class_annotation_parser->getTitles();
+        sort($method_titles);
+        sort($class_titles);
 
-        $expectedResultMethod = ['annotation'];
-        $expectedResultClass = ['role'];
-        sort($expectedResultMethod);
-        sort($expectedResultClass);
-        $this->assertEquals($methodTitles, $expectedResultMethod);
-        $this->assertEquals($classTitles, $expectedResultClass);
+        $expected_result_method = ['annotation'];
+        $expected_result_class = ['role'];
+        sort($expected_result_method);
+        sort($expected_result_class);
+        $this->assertEquals($method_titles, $expected_result_method);
+        $this->assertEquals($class_titles, $expected_result_class);
     }
 
     public function test_annotation_parser_parse_value()
     {
 
-        $methodComment = (new ReflectiveMethod(FakeClassWithAnnotation::class,
+        $method_comment = (new ReflectiveMethod(FakeClassWithAnnotation::class,
             "fakeMethodWithAnnotation"))->getComment();
-        $classComment = (new ReflectiveClass(FakeClassWithAnnotation::class))->getComment();
+        $class_comment = (new ReflectiveClass(FakeClassWithAnnotation::class))->getComment();
 
-        $methodAnnotationParser = new AnnotationParser($methodComment);
-        $methodValues = $methodAnnotationParser->parseValue("annotation");
+        $method_annotation_parser = new AnnotationParser($method_comment);
+        $method_values = $method_annotation_parser->parseValue("annotation");
 
-        $expectedResultMethod = [
+        $expected_result_method = [
             "annotation" => [
                 "name" => "\"Ali\"",
                 "username" => "\"Ali\".fake_helper_function()",
@@ -62,23 +62,23 @@ class AnnotationParserTest extends TestCase
             ]
         ];
 
-        foreach ($expectedResultMethod["annotation"] as $key => $value) {
-            $this->assertArrayHasKey($key, $methodValues);
-            $this->assertEquals($value, $methodValues[$key]);
+        foreach ($expected_result_method["annotation"] as $key => $value) {
+            $this->assertArrayHasKey($key, $method_values);
+            $this->assertEquals($value, $method_values[$key]);
         }
 
-        $classAnnotationParser = new AnnotationParser($classComment);
-        $classValues = $classAnnotationParser->parseValue("role");
+        $class_annotation_parser = new AnnotationParser($class_comment);
+        $class_values = $class_annotation_parser->parseValue("role");
 
-        $expectedResultClass = [
+        $expected_result_class = [
             "role" => [
                 "enabled" => "true"
             ]
         ];
 
-        foreach ($expectedResultClass["role"] as $key => $value) {
-            $this->assertArrayHasKey($key, $classValues);
-            $this->assertEquals($value, $classValues[$key]);
+        foreach ($expected_result_class["role"] as $key => $value) {
+            $this->assertArrayHasKey($key, $class_values);
+            $this->assertEquals($value, $class_values[$key]);
         }
     }
 }
