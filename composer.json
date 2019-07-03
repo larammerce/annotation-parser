@@ -15,7 +15,7 @@
         "annotation",
         "reflection"
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
         "php": "^7.1.3"
