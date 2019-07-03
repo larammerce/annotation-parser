@@ -1,0 +1,44 @@
+{
+    "name": "larammerce/annotation-parser",
+    "description": "A PHP annotation parser system based on PHP-doc.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arash Khajelou",
+            "email": "a.khajelou@gmail.com"
+        }
+    ],
+    "keywords": [
+        "library",
+        "larammerce",
+        "annotation",
+        "reflection"
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Larammerce\\AnnotationParser\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Larammerce\\AnnotationParser\\Tests\\": "tests/"
+        },
+        "files": [
+            "tests/faker/fake_helpers.php"
+        ]
+    }
+}
