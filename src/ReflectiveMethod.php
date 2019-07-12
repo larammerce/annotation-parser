@@ -53,7 +53,7 @@ class ReflectiveMethod extends ReflectiveAbstraction
     {
         $parts = explode('@', $action_str);
         if (count($parts) !== 2) {
-            throw new BadActionPassedException("The action should be like ClassName@methodName, you passed `{$action_str}`");
+            throw new AnnotationBadActionPassedException("The action should be like ClassName@methodName, you passed `{$action_str}`");
         }
         return new ReflectiveMethod($parts[0], $parts[1]);
     }
