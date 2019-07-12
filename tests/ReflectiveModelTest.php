@@ -51,4 +51,12 @@ class ReflectiveModelTest extends TestCase
         $this->assertTrue((new ReflectiveClass($class_name))->getAnnotation("role")->hasProperty("enabled"));
         $this->assertFalse((new ReflectiveClass($class_name))->getAnnotation("role")->hasProperty("ali"));
     }
+
+    public function test_reflective_method_construct_with_action()
+    { 
+        $action = FakeClassWithAnnotation::class."@fakeMethodWithAnnotation";
+
+        $this->assertEquals(true, (ReflectiveMethod::withAction($action))->getAnnotation("annotation")
+            ->checkProperty("name", "Ali"));
+    }
 }

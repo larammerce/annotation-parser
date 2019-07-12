@@ -46,6 +46,19 @@ class ReflectiveMethod extends ReflectiveAbstraction
     }
 
     /**
+     * @param $action_str
+     * @return ReflectiveMethod
+     */
+    public static function withAction(string $action_str): ReflectiveMethod
+    {
+        $parts = explode('@', $action_str);
+        if (count($parts) !== 2) {
+            throw new BadActionPassedException("The action should be like ClassName@methodName, you passed `{$action_str}`");
+        }
+        return new ReflectiveMethod($parts[0], $parts[1]);
+    }
+
+    /**
      * @return string
      */
     public function getComment(): string
