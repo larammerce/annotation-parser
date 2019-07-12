@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: arash
@@ -36,7 +37,7 @@ class ReflectiveMethod extends ReflectiveAbstraction
      * @throws AnnotationSyntaxException
      * @throws ReflectionException
      */
-    public function __construct(string $class_name,string $method_name)
+    public function __construct(string $class_name, string $method_name)
     {
         $this->class_name = $class_name;
         $this->method_name = $method_name;

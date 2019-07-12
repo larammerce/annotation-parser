@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: arash
@@ -12,6 +13,4 @@ namespace Larammerce\AnnotationParser;
 use Exception;
 
 class AnnotationSyntaxException extends Exception
-{
-
-}
+{ }

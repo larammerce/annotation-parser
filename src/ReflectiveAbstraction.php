@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: arash
@@ -34,12 +35,12 @@ abstract class ReflectiveAbstraction
      * @throws AnnotationBadScopeException
      * @throws AnnotationSyntaxException
      */
-    public function __construct(array $needed_titles=[])
+    public function __construct(array $needed_titles = [])
     {
         $this->annotations = [];
         $this->annotation_parser = new AnnotationParser($this->getComment());
 
-        if(count($needed_titles) === 0)
+        if (count($needed_titles) === 0)
             $needed_titles = $this->annotation_parser->getTitles();
 
         foreach ($needed_titles as $annotation_title) {

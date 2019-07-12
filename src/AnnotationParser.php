@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: arash
@@ -117,8 +118,9 @@ class AnnotationParser
             } else if ($parsing_key) {
                 if ($current_char === static::$EQUALITY_SIGN) {
                     $parsing_key = false;
-                } else if (!preg_match(static::$VALID_KEY_PATTERN, $current_char) or
-                    ((!preg_match(static::$VALID_KEY_EXTRA_PATTERN, $current_char)) and strlen($current_key) > 0)) {
+                } else if (
+                    !preg_match(static::$VALID_KEY_PATTERN, $current_char) or ((!preg_match(static::$VALID_KEY_EXTRA_PATTERN, $current_char)) and strlen($current_key) > 0)
+                ) {
                     $current_key .= $current_char;
                 } else if (strlen($current_key) !== 0) {
                     throw new AnnotationBadKeyException("The annotation key should not pass " .
@@ -133,7 +135,6 @@ class AnnotationParser
                             $in_string = false;
                     } else if ($current_char === "\\")
                         $back_slash_detected = true;
-
                 } else if (in_array($current_char, static::$STRING_SCOPE)) {
                     $in_string = $current_char;
                 } else if (array_search($current_char, static::$SCOPE_OPEN) !== false) {
@@ -181,5 +182,4 @@ class AnnotationParser
 
         return $result;
     }
-
 }

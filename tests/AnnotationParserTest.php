@@ -19,8 +19,10 @@ class AnnotationParserTest extends TestCase
 {
     public function test_annotation_parser_get_titles()
     {
-        $method_comment = (new ReflectiveMethod(FakeClassWithAnnotation::class,
-            "fakeMethodWithAnnotation"))->getComment();
+        $method_comment = (new ReflectiveMethod(
+            FakeClassWithAnnotation::class,
+            "fakeMethodWithAnnotation"
+        ))->getComment();
         $class_comment = (new ReflectiveClass(FakeClassWithAnnotation::class))->getComment();
 
         $method_annotation_parser = new AnnotationParser($method_comment);
@@ -41,8 +43,10 @@ class AnnotationParserTest extends TestCase
     public function test_annotation_parser_parse_value()
     {
 
-        $method_comment = (new ReflectiveMethod(FakeClassWithAnnotation::class,
-            "fakeMethodWithAnnotation"))->getComment();
+        $method_comment = (new ReflectiveMethod(
+            FakeClassWithAnnotation::class,
+            "fakeMethodWithAnnotation"
+        ))->getComment();
         $class_comment = (new ReflectiveClass(FakeClassWithAnnotation::class))->getComment();
 
         $method_annotation_parser = new AnnotationParser($method_comment);

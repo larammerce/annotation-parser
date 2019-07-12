@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: arash
@@ -12,5 +13,4 @@ namespace Larammerce\AnnotationParser;
 use Exception;
 
 class AnnotationBadScopeException extends Exception
-{
-}
+{ }
