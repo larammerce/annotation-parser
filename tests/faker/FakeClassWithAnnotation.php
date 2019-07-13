@@ -1,18 +1,12 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: arash
- * Date: 2019-03-03
- * Time: 09:57
- */
-
 namespace Larammerce\AnnotationParser\Tests\Faker;
 
-
 /**
- * Class FakerClassWithAnnotation
  * @role(enabled=true)
+ * 
+ * @author Arash Khajelou
+ * @link https://github.com/a-khajelou
  * @package Larammerce\AnnotationParser\Tests\Faker
  */
 class FakeClassWithAnnotation

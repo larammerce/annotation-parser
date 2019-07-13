@@ -2,21 +2,18 @@
 
 namespace Larammerce\AnnotationParser\Tests;
 
-
 use Larammerce\AnnotationParser\ReflectiveMethod;
 use Larammerce\AnnotationParser\Tests\Faker\FakeClassWithAnnotation;
 use Larammerce\AnnotationParser\ReflectiveClass;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Created by PhpStorm.
- * User: arash
- * Date: 2019-03-04
- * Time: 13:22
+ * @author Arash Khajelou
+ * @link https://github.com/a-khajelou
+ * @package Larammerce\AnnotationParser\Tests
  */
 class ReflectiveModelTest extends TestCase
 {
-
     public function test_reflective_abstraction_has_annotation()
     {
         $class_name = FakeClassWithAnnotation::class;
@@ -53,8 +50,8 @@ class ReflectiveModelTest extends TestCase
     }
 
     public function test_reflective_method_construct_with_action()
-    { 
-        $action = FakeClassWithAnnotation::class."@fakeMethodWithAnnotation";
+    {
+        $action = FakeClassWithAnnotation::class . "@fakeMethodWithAnnotation";
 
         $this->assertEquals(true, (ReflectiveMethod::withAction($action))->getAnnotation("annotation")
             ->checkProperty("name", "Ali"));

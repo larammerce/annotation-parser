@@ -1,17 +1,14 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: arash
- * Date: 7/13/16
- * Time: 1:44 PM
- */
-
 namespace Larammerce\AnnotationParser;
-
 
 use JsonSerializable;
 
+/**
+ * @author Arash Khajelou
+ * @link https://github.com/a-khajelou
+ * @package Larammerce\AnnotationParser
+ */
 class Annotation implements JsonSerializable
 {
     /**

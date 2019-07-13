@@ -1,17 +1,14 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: arash
- * Date: 7/13/16
- * Time: 1:42 PM
- */
-
 namespace Larammerce\AnnotationParser;
-
 
 use Exception;
 
+/**
+ * @author Arash Khajelou
+ * @link https://github.com/a-khajelou
+ * @package Larammerce\AnnotationParser
+ */
 abstract class ReflectiveAbstraction
 {
     /**

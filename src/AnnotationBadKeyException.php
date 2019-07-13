@@ -1,16 +1,13 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: arash
- * Date: 2019-03-03
- * Time: 13:37
- */
-
 namespace Larammerce\AnnotationParser;
-
 
 use Exception;
 
+/**
+ * @author Arash Khajelou
+ * @link https://github.com/a-khajelou
+ * @package Larammerce\AnnotationParser
+ */
 class AnnotationBadKeyException extends Exception
 { }

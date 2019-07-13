@@ -1,16 +1,10 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: arash
- * Date: 3/2/19
- * Time: 12:55 PM
- */
-
 namespace Larammerce\AnnotationParser;
 
 /**
- * Class PhpDocParser
+ * @author Arash Khajelou
+ * @link https://github.com/a-khajelou
  * @package Larammerce\AnnotationParser
  */
 class AnnotationParser

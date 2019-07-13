@@ -2,7 +2,6 @@
 
 namespace Larammerce\AnnotationParser\Tests;
 
-
 use Larammerce\AnnotationParser\Tests\Faker\FakeClassWithAnnotation;
 use Larammerce\AnnotationParser\AnnotationParser;
 use Larammerce\AnnotationParser\ReflectiveClass;
@@ -10,10 +9,9 @@ use Larammerce\AnnotationParser\ReflectiveMethod;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Created by PhpStorm.
- * User: arash
- * Date: 1/13/19
- * Time: 11:00 AM
+ * @author Arash Khajelou
+ * @link https://github.com/a-khajelou
+ * @package Larammerce\AnnotationParser\Tests
  */
 class AnnotationParserTest extends TestCase
 {

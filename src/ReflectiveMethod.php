@@ -1,18 +1,15 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: arash
- * Date: 7/13/16
- * Time: 1:41 PM
- */
-
 namespace Larammerce\AnnotationParser;
-
 
 use ReflectionException;
 use ReflectionMethod;
 
+/**
+ * @author Arash Khajelou
+ * @link https://github.com/a-khajelou
+ * @package Larammerce\AnnotationParser
+ */
 class ReflectiveMethod extends ReflectiveAbstraction
 {
     /**

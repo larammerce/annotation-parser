@@ -1,16 +1,13 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: arash
- * Date: 2019-03-04
- * Time: 14:14
- */
-
 namespace Larammerce\AnnotationParser;
-
 
 use Exception;
 
+/**
+ * @author Arash Khajelou
+ * @link https://github.com/a-khajelou
+ * @package Larammerce\AnnotationParser
+ */
 class AnnotationNotFoundException extends Exception
 { }
