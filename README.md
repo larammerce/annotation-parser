@@ -4,14 +4,16 @@
 
 A PHP [annotation](https://www.geeksforgeeks.org/annotations-in-java/) parser.
 
-## installation
+## Installation
 ```bash
 composer require larammerce/annotation-parser 
 ```
 
 By default there is no annotation in php language, but for cleaner and meaningful code writing, if you need annotations, then the php annotation parse can be a solution.
 
-usage: Assume that we have a class named `FakeClassWithAnnotation` with a method named `fake_method_with_annotation` as below and there exists a function with name `fake_helper_function` out of the class.
+## Usage 
+
+Assume that we have a class named `FakeClassWithAnnotation` with a method named `fake_method_with_annotation` as below and there exists a function with name `fake_helper_function` out of the class.
 ```php
 <?php
 
