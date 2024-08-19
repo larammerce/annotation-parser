@@ -24,7 +24,7 @@ class AnnotationParser
     private static $WHITE_SPACE = [" ", "*", "\t"];
     private static $EQUALITY_SIGN = "=";
     private static $SEPARATOR_SIGN = ",";
-    private static $TITLE_PATTERN = "/\@([a-zA-Z_]{2,20})\(/";
+    private static $TITLE_PATTERN = "/\@([a-zA-Z_0-9]{2,20})\(?/";
     private static $VALID_KEY_PATTERN = "/[^A-Za-z0-9_]/";
     private static $VALID_KEY_EXTRA_PATTERN = "/[^\.\*\-]/";
 
