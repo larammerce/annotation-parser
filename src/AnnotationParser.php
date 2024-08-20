@@ -27,7 +27,7 @@ class AnnotationParser
     private static $TITLE_PATTERN = "/\@([a-zA-Z_0-9]{2,20})\(?/";
     private static $VALID_KEY_PATTERN = "/[^A-Za-z0-9_]/";
     private static $VALID_KEY_EXTRA_PATTERN = "/[^\.\*\-]/";
-	private static $IGNORE_TITLE_LIST = ['param', 'return'];
+	private static $IGNORE_TITLE_LIST = ['param', 'return', 'author', 'deprecated', 'link', 'license'];
 
     /**
      * PhpDocParser constructor.
