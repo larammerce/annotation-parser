@@ -24,9 +24,10 @@ class AnnotationParser
     private static $WHITE_SPACE = [" ", "*", "\t"];
     private static $EQUALITY_SIGN = "=";
     private static $SEPARATOR_SIGN = ",";
-    private static $TITLE_PATTERN = "/\@([a-zA-Z_]{2,20})\(/";
+    private static $TITLE_PATTERN = "/\@([a-zA-Z_0-9]{2,20})\(?/";
     private static $VALID_KEY_PATTERN = "/[^A-Za-z0-9_]/";
     private static $VALID_KEY_EXTRA_PATTERN = "/[^\.\*\-]/";
+	private static $IGNORE_TITLE_LIST = ['param', 'return', 'author', 'deprecated', 'link', 'license'];
 
     /**
      * PhpDocParser constructor.
@@ -54,7 +55,7 @@ class AnnotationParser
     {
         preg_match_all(static::$TITLE_PATTERN, $this->php_doc, $matches);
         if (count($matches) === 2) {
-            $this->titles = $matches[1];
+            $this->titles = array_filter($matches[1] , function ($title) {return !in_array(strtolower($title),  self::$IGNORE_TITLE_LIST);});
         }
     }
 
